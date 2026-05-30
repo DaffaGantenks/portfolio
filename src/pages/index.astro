@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.svelte';
+import Hero from '../components/Hero.astro';
+import Stats from '../components/Stats.svelte';
+import Marquee from '../components/Marquee.svelte';
+import Projects from '../components/Projects.svelte';
+import Skills from '../components/Skills.svelte';
+import Contact from '../components/Contact.svelte';
+import Footer from '../components/Footer.svelte';
+---
+
+<Layout>
+	<Navbar client:load />
+	<main>
+		<Hero />
+		<Stats client:visible />
+		<Marquee 
+			items={['Astro', 'Svelte', 'GSAP', 'Three.js', 'TypeScript', 'Figma', 'WebGL', 'Motion Design']} 
+			client:load
+		/>
+		<Projects client:load />
+		<Skills client:visible />
+		<Contact client:visible />
+		<Marquee 
+			items={['Open to Work', 'Based in Indonesia', 'Freelance Available', 'Remote Friendly']} 
+			reverse={true} 
+			client:load
+		/>
+	</main>
+	<Footer />
+</Layout>

@@ -1,0 +1,238 @@
+---
+import InteractiveOrb from './InteractiveOrb.svelte';
+---
+
+<section class="hero" id="about">
+  <div class="hero-bg-circle"></div>
+  <div class="hero-content">
+    <p class="hero-label">Available for work · 2026</p>
+    <h1 class="hero-title">
+      Crafting<br />
+      <em>Digital</em><br />
+      Experiences
+    </h1>
+    <p class="hero-desc">
+      A creative frontend engineer & designer translating complex ideas into elegant, immersive interfaces — where aesthetics meets engineering precision.
+    </p>
+    <div class="hero-cta">
+      <a href="#work" class="btn-primary">View Work</a>
+      <a href="#contact" class="btn-outline">Let's Talk</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="avatar-frame">
+      <div class="avatar-ring">
+        <div class="avatar-inner"></div>
+        <div class="avatar-placeholder">
+          <InteractiveOrb client:load />
+        </div>
+      </div>
+    </div>
+    <div class="floating-tag tag-1">
+      <span class="tag-dot"></span>Frontend Engineer
+    </div>
+    <div class="floating-tag tag-2">
+      <span class="tag-dot"></span>UI/UX Designer
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Hero */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 6rem 3rem 2rem;
+    gap: 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg-circle {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(200, 255, 0, 0.04) 0%, transparent 70%);
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+  .hero-content {
+    position: relative;
+    z-index: 10;
+  }
+  .hero-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.2s forwards;
+  }
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    line-height: 1.05;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.4s forwards;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--accent);
+  }
+  .hero-desc {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--muted);
+    max-width: 440px;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.6s forwards;
+  }
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.8s forwards;
+  }
+  .hero-cta a {
+    text-decoration: none;
+  }
+
+  /* Hero visual */
+  .hero-visual {
+    position: relative;
+    height: 500px;
+    opacity: 0;
+    animation: fadeIn 1.2s 0.5s forwards;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .avatar-frame {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .avatar-ring {
+    width: 360px;
+    height: 360px;
+    border: 1px solid rgba(200, 255, 0, 0.15);
+    border-radius: 50%;
+    position: relative;
+    animation: spin 20s linear infinite;
+  }
+  .avatar-ring::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+  .avatar-inner {
+    position: absolute;
+    inset: 20px;
+    border: 1px solid rgba(200, 255, 0, 0.08);
+    border-radius: 50%;
+  }
+  .avatar-placeholder {
+    position: absolute;
+    inset: 40px;
+    background: linear-gradient(135deg, #1a1a25, #0f0f18);
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .floating-tag {
+    position: absolute;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 0.6rem 1rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    animation: float 3s ease-in-out infinite;
+    z-index: 12;
+  }
+  .tag-1 {
+    top: 60px;
+    right: 20px;
+    animation-delay: 0s;
+  }
+  .tag-2 {
+    bottom: 80px;
+    left: 10px;
+    animation-delay: 1.5s;
+  }
+  .tag-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+
+  /* Responsive breakpoints */
+  @media (max-width: 992px) {
+    .hero {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 3rem;
+      padding-top: 8rem;
+    }
+    .hero-bg-circle {
+      left: 50%;
+      top: 30%;
+    }
+    .hero-desc {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-cta {
+      justify-content: center;
+    }
+    .hero-visual {
+      height: 400px;
+      order: -1;
+    }
+    .avatar-ring {
+      width: 280px;
+      height: 280px;
+    }
+    .avatar-placeholder {
+      inset: 30px;
+    }
+    .tag-1 {
+      top: 20px;
+      right: 10%;
+    }
+    .tag-2 {
+      bottom: 20px;
+      left: 10%;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .hero {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+    .hero-cta {
+      flex-direction: column;
+      gap: 0.75rem;
+      align-items: stretch;
+    }
+  }
+</style>
