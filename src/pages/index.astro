@@ -5,193 +5,201 @@ import '../styles/global.css';
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Daffa Aufa — Creative Frontend Engineer & Designer crafting immersive digital experiences at the intersection of engineering precision and visual storytelling." />
   <title>Daffa Aufa — Creative Frontend Engineer & Designer</title>
-
-  <!-- SEO -->
-  <meta name="description" content="Daffa Aufa — Creative Frontend Engineer & Designer based in Indonesia. Building immersive digital interfaces with Astro, Svelte, Three.js, PHP, Laravel, and beyond." />
-  <meta name="keywords" content="Daffa Aufa, Frontend Engineer, Web Designer, Astro, Svelte, PHP, Laravel, Indonesia, Portfolio" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Daffa Aufa — Creative Frontend Engineer & Designer" />
-  <meta property="og:description" content="I engineer interfaces that breathe." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="/og-image.png" />
-  <meta property="og:url" content="https://daffaaufa.dev" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Daffa Aufa — Creative Frontend Engineer" />
-  <meta name="twitter:image" content="/og-image.png" />
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
-
-  <!-- GSAP -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
 </head>
 <body data-theme="dark">
 
-  <!-- Section 1 — Navigation -->
+  <!-- Custom Cursor -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+  <div id="cursor-label"></div>
+
+  <!-- Navigation -->
   <nav id="navbar">
-    <a href="#hero" class="nav-logo"><em>DA</em></a>
+    <a href="/" class="nav-logo"><em>DA</em></a>
     <ul class="nav-links">
-      <li><a href="#work">Work</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="/" class="nav-link">Home</a></li>
+      <li><a href="/projects" class="nav-link">Projects</a></li>
+      <li><a href="/about" class="nav-link">About</a></li>
     </ul>
-    <button id="theme-toggle" aria-label="Toggle theme">◐</button>
+    <div class="nav-right">
+      <a href="/cv-daffa-aufa.pdf" class="btn-resume" download>Resume ↓</a>
+      <a href="#contact" class="btn-hire">Hire Me ↗</a>
+      <button id="theme-toggle" aria-label="Toggle theme">◐</button>
+    </div>
   </nav>
 
-  <!-- Section 2 — Hero -->
+  <!-- ============================================================
+       SECTION A: HERO
+       ============================================================ -->
   <section id="hero">
     <div class="hero-left">
-      <p class="hero-eyebrow">Creative Frontend Engineer & Designer</p>
+      <p class="hero-eyebrow">Creative Frontend Engineer &amp; Designer</p>
       <h1 class="hero-name">
-        <span class="hero-name-first">Daffa</span>
-        <span class="hero-name-last">Aufa</span>
+        <span class="hero-first">Daffa</span>
+        <span class="hero-last">Aufa</span>
       </h1>
       <p class="hero-desc">
         Crafting immersive digital experiences at the intersection of
-        engineering precision and visual storytelling. Based in Indonesia,
-        available worldwide.
+        engineering precision and visual storytelling.
+        Based in Malang, Indonesia — available worldwide.
       </p>
       <div class="hero-cta">
-        <a href="#work" class="btn-primary">View Work</a>
-        <a href="/cv-daffa-aufa.pdf" class="btn-ghost" download>Download CV ↓</a>
+        <a href="/projects" class="btn-primary" data-cursor="WORK">View Work</a>
+        <a href="/cv-daffa-aufa.pdf" class="btn-ghost" download data-cursor="CV">Download CV ↓</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="stat-n">4+</span>
+          <span class="stat-l">Years Coding</span>
+        </div>
+        <div class="hero-stat">
+          <span class="stat-n">20+</span>
+          <span class="stat-l">Projects</span>
+        </div>
+        <div class="hero-stat">
+          <span class="stat-n">10+</span>
+          <span class="stat-l">Clients</span>
+        </div>
       </div>
     </div>
+
     <div class="hero-right">
       <div class="hero-avatar-wrap">
-        <div class="hero-ring hero-ring-outer"></div>
-        <div class="hero-ring hero-ring-inner"></div>
+        <div class="hero-ring ring-outer"></div>
+        <div class="hero-ring ring-inner"></div>
         <div class="hero-avatar-frame">
-          <span class="hero-avatar-initials">DA</span>
-          <!-- When real photo available: <img src="/avatar.jpg" alt="Daffa Aufa" /> -->
+          <span class="hero-initials">DA</span>
         </div>
-        <div class="hero-tag tag-1"><span class="tag-dot"></span>Frontend</div>
-        <div class="hero-tag tag-2"><span class="tag-dot"></span>Full Stack</div>
-        <div class="hero-tag tag-3"><span class="tag-dot"></span>Designer</div>
+        <div class="hero-tag htag-1"><span class="tdot"></span>Frontend</div>
+        <div class="hero-tag htag-2"><span class="tdot"></span>Full Stack</div>
+        <div class="hero-tag htag-3"><span class="tdot"></span>Designer</div>
       </div>
     </div>
+
     <div class="hero-badge">
       <span class="badge-dot"></span>Available for work · 2026
     </div>
     <div class="hero-scroll">SCROLL ↓</div>
   </section>
 
-  <!-- Section 3 — Work / Bento Grid -->
+  <!-- ============================================================
+       SECTION B: SELECTED WORK — Bento Flip Cards
+       ============================================================ -->
   <section id="work">
     <div class="section-header">
       <span class="section-num">01</span>
       <h2 class="section-title">Selected Work</h2>
-      <p class="section-note">Hover to flip · All projects are real</p>
+      <a href="/projects" class="section-more" data-cursor="ALL">View All Archive →</a>
     </div>
+
     <div class="bento-grid">
 
-      <!-- Card 1: Featured large -->
-      <div class="bento-item bento-featured">
-        <div class="flip-card">
-          <div class="flip-front">
-            <span class="card-num">001</span>
-            <div class="card-bottom">
-              <div class="card-tags"><span>Svelte</span><span>Astro</span><span>TypeScript</span></div>
+      <!-- Card 1: Featured -->
+      <div class="bento-card bento-featured">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="card-bg bento-c1"></div>
+            <div class="card-gradient"></div>
+            <div class="card-content">
+              <span class="card-type">WEB PROJECT</span>
               <h3 class="card-title">Project Volantis</h3>
-              <p class="card-sub">AI Business Dashboard</p>
+              <p class="card-desc">AI-powered business intelligence dashboard with real-time data streams, predictive analytics, and immersive visualization.</p>
+              <div class="card-tags">
+                <span>Svelte</span><span>Astro</span><span>TypeScript</span><span>AI/ML</span>
+              </div>
             </div>
-            <div class="card-bg-glow" style="--glow-color: rgba(96,165,250,0.08)"></div>
           </div>
-          <div class="flip-back">
-            <h3 class="card-title-back">Project Volantis</h3>
-            <p class="card-desc">A real-time AI-powered business intelligence dashboard featuring live data streams, predictive analytics, and immersive data visualization for enterprise decision-making.</p>
-            <div class="card-tags"><span>Svelte</span><span>Astro</span><span>TypeScript</span><span>WebSocket</span></div>
-            <a href="https://github.com/daffaaufa" class="card-link" target="_blank">View Project →</a>
+          <div class="card-back">
+            <p class="back-title">Project Volantis</p>
+            <p class="back-desc">A next-generation analytics platform bridging raw data and visual clarity — built for enterprise-scale insights.</p>
+            <a href="/projects" class="back-link" data-cursor="VIEW">View in Archive →</a>
           </div>
         </div>
       </div>
 
       <!-- Card 2 -->
-      <div class="bento-item">
-        <div class="flip-card">
-          <div class="flip-front">
-            <span class="card-num">002</span>
-            <div class="card-bottom">
-              <div class="card-tags"><span>Three.js</span><span>WebGL</span></div>
+      <div class="bento-card bento-medium">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="card-bg bento-c2"></div>
+            <div class="card-gradient"></div>
+            <div class="card-content">
+              <span class="card-type">EXPERIMENT</span>
               <h3 class="card-title">Aura 3D</h3>
-              <p class="card-sub">Watch Configurator</p>
+              <div class="card-tags"><span>Three.js</span><span>WebGL</span></div>
             </div>
-            <div class="card-bg-glow" style="--glow-color: rgba(0,117,143,0.1)"></div>
           </div>
-          <div class="flip-back">
-            <h3 class="card-title-back">Aura 3D</h3>
-            <p class="card-desc">Interactive 3D luxury watch configurator with real-time material rendering, HDR reflections, and physics-based shading — entirely in the browser.</p>
-            <div class="card-tags"><span>Three.js</span><span>WebGL</span><span>GSAP</span></div>
-            <a href="https://github.com/daffaaufa" class="card-link" target="_blank">View Project →</a>
+          <div class="card-back">
+            <p class="back-title">Aura 3D</p>
+            <p class="back-desc">Interactive 3D luxury watch configurator with real-time WebGL material rendering and HDR reflections.</p>
+            <a href="/projects" class="back-link" data-cursor="VIEW">View in Archive →</a>
           </div>
         </div>
       </div>
 
       <!-- Card 3 -->
-      <div class="bento-item">
-        <div class="flip-card">
-          <div class="flip-front">
-            <span class="card-num">003</span>
-            <div class="card-bottom">
-              <div class="card-tags"><span>Astro</span><span>GSAP</span></div>
+      <div class="bento-card bento-medium">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="card-bg bento-c3"></div>
+            <div class="card-gradient"></div>
+            <div class="card-content">
+              <span class="card-type">WEB PROJECT</span>
               <h3 class="card-title">Elysian</h3>
-              <p class="card-sub">Fashion Microsite</p>
+              <div class="card-tags"><span>Astro</span><span>GSAP</span></div>
             </div>
-            <div class="card-bg-glow" style="--glow-color: rgba(255,45,32,0.07)"></div>
           </div>
-          <div class="flip-back">
-            <h3 class="card-title-back">Elysian</h3>
-            <p class="card-desc">Cinematic high-fashion brand microsite with editorial scroll storytelling, parallax layers, and choreographed GSAP timeline animations.</p>
-            <div class="card-tags"><span>Astro</span><span>GSAP</span><span>CSS</span></div>
-            <a href="https://github.com/daffaaufa" class="card-link" target="_blank">View Project →</a>
+          <div class="card-back">
+            <p class="back-title">Elysian</p>
+            <p class="back-desc">Cinematic high-fashion brand microsite with editorial scroll storytelling and GSAP timeline animations.</p>
+            <a href="/projects" class="back-link" data-cursor="VIEW">View in Archive →</a>
           </div>
         </div>
       </div>
 
       <!-- Card 4 -->
-      <div class="bento-item bento-wide">
-        <div class="flip-card">
-          <div class="flip-front">
-            <span class="card-num">004</span>
-            <div class="card-bottom">
-              <div class="card-tags"><span>Rust</span><span>WASM</span><span>Canvas</span></div>
+      <div class="bento-card bento-wide">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="card-bg bento-c4"></div>
+            <div class="card-gradient"></div>
+            <div class="card-content">
+              <span class="card-type">TOOL</span>
               <h3 class="card-title">Chronos</h3>
-              <p class="card-sub">Physics Simulator</p>
+              <div class="card-tags"><span>Rust</span><span>WASM</span><span>Canvas</span></div>
             </div>
-            <div class="card-bg-glow" style="--glow-color: rgba(206,65,43,0.08)"></div>
           </div>
-          <div class="flip-back">
-            <h3 class="card-title-back">Chronos</h3>
-            <p class="card-desc">Verlet integration physics simulator compiled from Rust to WebAssembly, rendering thousands of real-time particle interactions on HTML5 Canvas at 60fps.</p>
-            <div class="card-tags"><span>Rust</span><span>WebAssembly</span><span>Canvas</span></div>
-            <a href="https://github.com/daffaaufa" class="card-link" target="_blank">View Project →</a>
+          <div class="card-back">
+            <p class="back-title">Chronos</p>
+            <p class="back-desc">Verlet physics simulator compiled from Rust to WebAssembly. Renders thousands of particles at 60fps.</p>
+            <a href="/projects" class="back-link" data-cursor="VIEW">View in Archive →</a>
           </div>
         </div>
       </div>
 
       <!-- Card 5 -->
-      <div class="bento-item bento-wide">
-        <div class="flip-card">
-          <div class="flip-front">
-            <span class="card-num">005</span>
-            <div class="card-bottom">
-              <div class="card-tags"><span>Laravel</span><span>PostgreSQL</span></div>
+      <div class="bento-card bento-wide">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="card-bg bento-c5"></div>
+            <div class="card-gradient"></div>
+            <div class="card-content">
+              <span class="card-type">BACKEND</span>
               <h3 class="card-title">Nusantara API</h3>
-              <p class="card-sub">RESTful Backend</p>
+              <div class="card-tags"><span>Laravel</span><span>PostgreSQL</span></div>
             </div>
-            <div class="card-bg-glow" style="--glow-color: rgba(51,103,145,0.1)"></div>
           </div>
-          <div class="flip-back">
-            <h3 class="card-title-back">Nusantara API</h3>
-            <p class="card-desc">Production-grade RESTful API platform serving geographic and cultural data for the Indonesian archipelago, built with Laravel and dual-database architecture.</p>
-            <div class="card-tags"><span>Laravel</span><span>PHP</span><span>PostgreSQL</span><span>MySQL</span></div>
-            <a href="https://github.com/daffaaufa" class="card-link" target="_blank">View Project →</a>
+          <div class="card-back">
+            <p class="back-title">Nusantara API</p>
+            <p class="back-desc">Production-grade RESTful API for Indonesian geographic data. Built with Laravel and dual-database architecture.</p>
+            <a href="/projects" class="back-link" data-cursor="VIEW">View in Archive →</a>
           </div>
         </div>
       </div>
@@ -199,11 +207,13 @@ import '../styles/global.css';
     </div>
   </section>
 
-  <!-- Section 4 — Skills Physics Playground -->
+  <!-- ============================================================
+       SECTION C: SKILLS — Physics Playground
+       ============================================================ -->
   <section id="skills">
     <div class="section-header">
       <span class="section-num">02</span>
-      <h2 class="section-title">Craft & Stack</h2>
+      <h2 class="section-title">Craft &amp; Stack</h2>
       <p class="section-note">Click to scatter · Drag to move</p>
     </div>
     <div class="skills-arena">
@@ -211,86 +221,50 @@ import '../styles/global.css';
     </div>
   </section>
 
-  <!-- Section 5 — About -->
-  <section id="about">
-    <div class="section-header">
-      <span class="section-num">03</span>
-      <h2 class="section-title">About</h2>
-    </div>
-    <div class="about-inner">
-      <blockquote class="about-quote">"I engineer interfaces that breathe."</blockquote>
-      <div class="about-cols">
-        <div class="about-col-left">
-          <div class="about-avatar">DA</div>
-        </div>
-        <div class="about-col-right">
-          <p class="about-p">
-            Based in Malang, Indonesia — I build digital experiences at the
-            intersection of engineering precision and artistic sensibility.
-            Every pixel is intentional. Every transition, earned.
-          </p>
-          <p class="about-p">
-            I've shipped web products spanning full-stack applications, 
-            interactive frontends, and RESTful APIs. My stack covers modern 
-            frontend (Astro, Svelte, GSAP) and backend (Laravel, PHP, PostgreSQL, 
-            MySQL, Rust). I care deeply about performance, accessibility, and 
-            the 0.1 seconds that separates smooth from perfect.
-          </p>
-          <div class="about-stats">
-            <div class="stat"><span class="stat-num">4+</span><span class="stat-label">Years coding</span></div>
-            <div class="stat"><span class="stat-num">20+</span><span class="stat-label">Projects shipped</span></div>
-            <div class="stat"><span class="stat-num">10+</span><span class="stat-label">Clients served</span></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Testimonial -->
-      <div class="testimonials">
-        <div class="testimonial-card">
-          <p class="testimonial-text">"Daffa delivered exceptional work — clean code, pixel-perfect UI, and ahead of schedule. Highly recommended."</p>
-          <div class="testimonial-author">
-            <span class="testimonial-name">— Client, Startup SEA</span>
-            <span class="testimonial-role">Product Manager</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section 6 — Contact -->
+  <!-- ============================================================
+       SECTION D: CONTACT
+       ============================================================ -->
   <section id="contact">
     <div class="contact-inner">
-      <p class="section-num">04</p>
-      <h2 class="contact-heading">
-        <span class="contact-line-1">LET'S</span>
-        <span class="contact-line-2">BUILD</span>
-      </h2>
-      <p class="contact-tagline">something bold.</p>
-      <a href="mailto:hello@daffaaufa.dev" class="contact-email">
-        hello@daffaaufa.dev <span class="contact-arrow">→</span>
-      </a>
+      <span class="section-num">03</span>
+      <div class="contact-heading-wrap">
+        <h2 class="contact-l1">HAVE AN</h2>
+        <h2 class="contact-l2">IDEA?</h2>
+        <p class="contact-sub">Let's build it together.</p>
+      </div>
+
+      <div class="contact-card">
+        <p class="contact-card-label">Send me a message</p>
+        <p class="contact-card-sub">Directly to my inbox. I reply quickly.</p>
+        <a href="mailto:hello@daffaaufa.dev" class="contact-email-btn" data-cursor="MAIL">
+          <span class="email-icon">✉</span>
+          hello@daffaaufa.dev
+          <span class="email-arrow">↗</span>
+        </a>
+        <button class="contact-copy" data-cursor="COPY">⧉ Copy address</button>
+      </div>
+
       <div class="contact-socials">
-        <a href="https://github.com/daffaaufa" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://linkedin.com/in/daffaaufa" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://dribbble.com/daffaaufa" target="_blank" rel="noopener">Dribbble</a>
+        <a href="https://github.com/daffaaufa" target="_blank" class="social-btn" data-cursor="GITHUB">
+          ⌥ GitHub
+        </a>
+        <a href="https://linkedin.com/in/daffaaufa" target="_blank" class="social-btn" data-cursor="LINK">
+          ⊞ LinkedIn
+        </a>
+        <a href="https://dribbble.com/daffaaufa" target="_blank" class="social-btn" data-cursor="SHOTS">
+          ◎ Dribbble
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Section 7 — Footer -->
+  <!-- Footer -->
   <footer>
-    <span class="footer-left">© 2026 Daffa Aufa</span>
-    <span class="footer-center" id="footerStar">✦</span>
-    <span class="footer-right">Engineered with Astro + Svelte</span>
+    <span>© 2026 Daffa Aufa</span>
+    <span id="footerStar">✦</span>
+    <span>Engineered with Astro + Svelte</span>
   </footer>
 
-  <!-- Custom Cursor -->
-  <div id="cursor-dot"></div>
-  <div id="cursor-ring"></div>
-  <div id="cursor-text"></div>
-
-  <script>
-    import '../scripts/main.js';
-  </script>
+  <script src="/src/scripts/main.js"></script>
 </body>
 </html>

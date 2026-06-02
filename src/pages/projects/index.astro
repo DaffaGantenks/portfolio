@@ -1,0 +1,187 @@
+---
+import '../../styles/global.css';
+---
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Daffa Aufa's complete project archive — web development, backend engineering, creative experiments, and open source contributions." />
+  <title>Projects Archive — Daffa Aufa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body data-theme="dark">
+
+  <!-- Custom Cursor -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+  <div id="cursor-label"></div>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <a href="/" class="nav-logo"><em>DA</em></a>
+    <ul class="nav-links">
+      <li><a href="/" class="nav-link">Home</a></li>
+      <li><a href="/projects" class="nav-link">Projects</a></li>
+      <li><a href="/about" class="nav-link">About</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="/cv-daffa-aufa.pdf" class="btn-resume" download>Resume ↓</a>
+      <a href="/#contact" class="btn-hire">Hire Me ↗</a>
+      <button id="theme-toggle" aria-label="Toggle theme">◐</button>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       ARCHIVE HERO
+       ============================================================ -->
+  <section class="archive-hero">
+    <h1 class="archive-title">ARCHIVE</h1>
+    <p class="archive-sub">
+      A complete collection of my engineering work, experiments,
+      and open source contributions.
+    </p>
+  </section>
+
+  <!-- ============================================================
+       FILTER BAR + SEARCH
+       ============================================================ -->
+  <div class="filter-bar">
+    <div class="filter-tabs">
+      <button class="filter-btn active" data-filter="all" id="filter-all">All Work</button>
+      <button class="filter-btn" data-filter="web" id="filter-web">Web Development</button>
+      <button class="filter-btn" data-filter="backend" id="filter-backend">Backend</button>
+      <button class="filter-btn" data-filter="tools" id="filter-tools">Tools</button>
+      <button class="filter-btn" data-filter="experiment" id="filter-experiment">Experiments</button>
+    </div>
+    <div class="search-wrap">
+      <span class="search-icon">⌕</span>
+      <input
+        type="text"
+        id="projectSearch"
+        placeholder="Search projects..."
+        class="search-input"
+        aria-label="Search projects"
+      />
+    </div>
+  </div>
+
+  <!-- ============================================================
+       PROJECTS GRID
+       ============================================================ -->
+  <div class="projects-grid">
+
+    <!-- Project 1 -->
+    <article class="project-card" data-categories="web backend" id="card-volantis">
+      <div class="project-card-img">
+        <div class="project-img-placeholder" style="--c1:#1a3a6b;--c2:#0a0e1a"></div>
+        <div class="project-card-links">
+          <a href="https://github.com/daffaaufa" target="_blank" class="card-icon-link" aria-label="GitHub repository" data-cursor="CODE">⌥</a>
+          <a href="#" target="_blank" class="card-icon-link" aria-label="Live demo" data-cursor="LIVE">↗</a>
+        </div>
+      </div>
+      <div class="project-card-body">
+        <span class="project-card-type">WEB PROJECT</span>
+        <h3 class="project-card-title">Project Volantis</h3>
+        <p class="project-card-desc">AI-powered business intelligence dashboard with real-time data streams, predictive analytics, and immersive visualization.</p>
+        <div class="project-card-tags">
+          <span>Svelte</span><span>Astro</span><span>TypeScript</span><span>+1</span>
+        </div>
+        <a href="#" class="project-case-link" data-cursor="CASE">VIEW CASE STUDY ↗</a>
+      </div>
+    </article>
+
+    <!-- Project 2 -->
+    <article class="project-card" data-categories="experiment web" id="card-aura">
+      <div class="project-card-img">
+        <div class="project-img-placeholder" style="--c1:#00758f;--c2:#0a0e1a"></div>
+        <div class="project-card-links">
+          <a href="https://github.com/daffaaufa" target="_blank" class="card-icon-link" aria-label="GitHub repository" data-cursor="CODE">⌥</a>
+          <a href="#" target="_blank" class="card-icon-link" aria-label="Live demo" data-cursor="LIVE">↗</a>
+        </div>
+      </div>
+      <div class="project-card-body">
+        <span class="project-card-type">EXPERIMENT</span>
+        <h3 class="project-card-title">Aura 3D</h3>
+        <p class="project-card-desc">Interactive 3D luxury watch configurator with real-time WebGL material rendering and HDR reflections.</p>
+        <div class="project-card-tags">
+          <span>Three.js</span><span>WebGL</span><span>GSAP</span>
+        </div>
+        <a href="#" class="project-case-link" data-cursor="CASE">VIEW CASE STUDY ↗</a>
+      </div>
+    </article>
+
+    <!-- Project 3 -->
+    <article class="project-card" data-categories="web experiment" id="card-elysian">
+      <div class="project-card-img">
+        <div class="project-img-placeholder" style="--c1:#ff2d20;--c2:#0a0e1a"></div>
+        <div class="project-card-links">
+          <a href="https://github.com/daffaaufa" target="_blank" class="card-icon-link" aria-label="GitHub repository" data-cursor="CODE">⌥</a>
+          <a href="#" target="_blank" class="card-icon-link" aria-label="Live demo" data-cursor="LIVE">↗</a>
+        </div>
+      </div>
+      <div class="project-card-body">
+        <span class="project-card-type">WEB PROJECT</span>
+        <h3 class="project-card-title">Elysian</h3>
+        <p class="project-card-desc">Cinematic high-fashion brand microsite with editorial scroll storytelling and GSAP timeline animations.</p>
+        <div class="project-card-tags">
+          <span>Astro</span><span>GSAP</span><span>CSS</span>
+        </div>
+        <a href="#" class="project-case-link" data-cursor="CASE">VIEW CASE STUDY ↗</a>
+      </div>
+    </article>
+
+    <!-- Project 4 -->
+    <article class="project-card" data-categories="tools experiment" id="card-chronos">
+      <div class="project-card-img">
+        <div class="project-img-placeholder" style="--c1:#ce412b;--c2:#0a0e1a"></div>
+        <div class="project-card-links">
+          <a href="https://github.com/daffaaufa" target="_blank" class="card-icon-link" aria-label="GitHub repository" data-cursor="CODE">⌥</a>
+        </div>
+      </div>
+      <div class="project-card-body">
+        <span class="project-card-type">TOOL</span>
+        <h3 class="project-card-title">Chronos</h3>
+        <p class="project-card-desc">Verlet physics simulator compiled from Rust to WebAssembly. Renders thousands of particles at 60fps.</p>
+        <div class="project-card-tags">
+          <span>Rust</span><span>WASM</span><span>Canvas</span>
+        </div>
+        <a href="#" class="project-case-link" data-cursor="CASE">VIEW CASE STUDY ↗</a>
+      </div>
+    </article>
+
+    <!-- Project 5 -->
+    <article class="project-card" data-categories="backend web" id="card-nusantara">
+      <div class="project-card-img">
+        <div class="project-img-placeholder" style="--c1:#336791;--c2:#0a0e1a"></div>
+        <div class="project-card-links">
+          <a href="https://github.com/daffaaufa" target="_blank" class="card-icon-link" aria-label="GitHub repository" data-cursor="CODE">⌥</a>
+          <a href="#" target="_blank" class="card-icon-link" aria-label="Live demo" data-cursor="LIVE">↗</a>
+        </div>
+      </div>
+      <div class="project-card-body">
+        <span class="project-card-type">BACKEND</span>
+        <h3 class="project-card-title">Nusantara API</h3>
+        <p class="project-card-desc">Production-grade RESTful API for Indonesian geographic data. Built with Laravel and dual-database architecture.</p>
+        <div class="project-card-tags">
+          <span>Laravel</span><span>PHP</span><span>PostgreSQL</span><span>+1</span>
+        </div>
+        <a href="#" class="project-case-link" data-cursor="CASE">VIEW CASE STUDY ↗</a>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <span>© 2026 Daffa Aufa</span>
+    <span id="footerStar">✦</span>
+    <span>Engineered with Astro + Svelte</span>
+  </footer>
+
+  <script src="/src/scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+---
+import '../styles/global.css';
+---
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About Daffa Aufa — Creative Frontend Engineer & Designer. My story, philosophy, and professional journey at the intersection of code and craft." />
+  <title>About — Daffa Aufa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+</head>
+<body data-theme="dark">
+
+  <!-- Custom Cursor -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+  <div id="cursor-label"></div>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <a href="/" class="nav-logo"><em>DA</em></a>
+    <ul class="nav-links">
+      <li><a href="/" class="nav-link">Home</a></li>
+      <li><a href="/projects" class="nav-link">Projects</a></li>
+      <li><a href="/about" class="nav-link">About</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="/cv-daffa-aufa.pdf" class="btn-resume" download>Resume ↓</a>
+      <a href="/#contact" class="btn-hire">Hire Me ↗</a>
+      <button id="theme-toggle" aria-label="Toggle theme">◐</button>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       A. ABOUT HERO
+       ============================================================ -->
+  <section class="about-hero">
+    <h1 class="about-hero-title">
+      <span class="ah-line1">BEYOND</span>
+      <span class="ah-line2">CODE.</span>
+    </h1>
+    <p class="about-hero-sub">
+      Bridging academic theory and real-world application. Engineering robust
+      digital solutions with a focus on data-driven intelligence and seamless
+      user experiences.
+    </p>
+  </section>
+
+  <!-- ============================================================
+       B. THE STORY
+       ============================================================ -->
+  <section class="about-story">
+    <div class="story-left">
+      <span class="section-badge">ABOUT ME</span>
+      <h2 class="story-heading">
+        Engineering the future with <em>code</em> and <em>craft</em>.
+      </h2>
+      <div class="story-avatar">DA</div>
+    </div>
+    <div class="story-right">
+      <p>
+        I'm an undergraduate student at <strong>Universitas Negeri Malang</strong>,
+        specializing in Informatics Engineering Education with a focus on
+        Full Stack Web Development.
+      </p>
+      <p>
+        From building RESTful APIs with Laravel and PostgreSQL to crafting
+        immersive frontend experiences with Astro, Svelte, and GSAP — I treat
+        every project as an opportunity to push technical boundaries.
+      </p>
+      <p>
+        My stack is wide, my taste is specific. I care deeply about performance,
+        accessibility, and the 0.1 seconds that separates smooth from perfect.
+      </p>
+      <div class="story-interests">
+        <span>Data &amp; Machine Learning</span>
+        <span>Full Stack Engineering</span>
+        <span>System Architecture</span>
+        <span>Creative Frontend</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       C. EXPERIENCE TIMELINE
+       ============================================================ -->
+  <section class="about-timeline">
+    <div class="timeline-left">
+      <span class="section-badge">WORK &amp; PROJECTS</span>
+      <h2 class="timeline-heading">Experience</h2>
+      <p class="timeline-sub">Projects and work experience that shaped my expertise.</p>
+      <a href="/cv-daffa-aufa.pdf" class="timeline-cv" download data-cursor="CV">Download Resume ↗</a>
+    </div>
+
+    <div class="timeline-right">
+
+      <!-- Entry 1 -->
+      <div class="timeline-item" id="tl-freelance">
+        <div class="timeline-year">2024 — Present</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <h3 class="tcard-title">Freelance Frontend Developer</h3>
+          <span class="tcard-company">Self-employed</span>
+          <p class="tcard-desc">
+            Building custom web applications and interfaces for clients across
+            Southeast Asia. Specializing in Astro, Svelte, and Laravel-based solutions.
+          </p>
+          <div class="tcard-tags">
+            <span>Astro</span><span>Svelte</span><span>Laravel</span><span>Freelance</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Entry 2 -->
+      <div class="timeline-item" id="tl-um">
+        <div class="timeline-year">2022 — Present</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <h3 class="tcard-title">Informatics Engineering Education</h3>
+          <span class="tcard-company">🎓 Universitas Negeri Malang</span>
+          <p class="tcard-desc">
+            Bachelor of Science (S1). Combining technical expertise in software
+            development, computer systems, and networking with pedagogical knowledge.
+          </p>
+          <div class="tcard-tags">
+            <span>Full Stack</span><span>System Architecture</span><span>GPA 3.86</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Entry 3 -->
+      <div class="timeline-item" id="tl-smk">
+        <div class="timeline-year">2019 — 2022</div>
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <h3 class="tcard-title">High School Diploma — Software Engineering</h3>
+          <span class="tcard-company">🎓 SMK Negeri 1 Jenangan Ponorogo</span>
+          <p class="tcard-desc">
+            Focused on programming, web development, databases, and software lifecycle.
+            Built a strong foundation in practical software engineering.
+          </p>
+          <div class="tcard-tags">
+            <span>PHP</span><span>MySQL</span><span>Web Dev</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       D. PHILOSOPHY
+       ============================================================ -->
+  <section class="about-philosophy">
+    <div class="philosophy-left">
+      <span class="section-badge">PRINCIPLES</span>
+      <h2 class="philosophy-heading">Philosophy</h2>
+      <p class="philosophy-sub">
+        Core principles that guide my approach to software development
+        and problem-solving.
+      </p>
+    </div>
+
+    <div class="philosophy-grid">
+
+      <div class="philosophy-card" id="phil-precision">
+        <div class="philosophy-icon">◈</div>
+        <h3>Precision First</h3>
+        <p>In code and design, every detail matters. I prioritize clean, maintainable architecture that stands the test of time.</p>
+      </div>
+
+      <div class="philosophy-card" id="phil-performance">
+        <div class="philosophy-icon">⬡</div>
+        <h3>Performance Obsessed</h3>
+        <p>The 0.1 seconds that separate smooth from perfect. Every millisecond of load time is an opportunity to delight or lose a user.</p>
+      </div>
+
+      <div class="philosophy-card" id="phil-user">
+        <div class="philosophy-icon">◎</div>
+        <h3>User-Centric Core</h3>
+        <p>Technology exists to serve people. I build interfaces that don't just function — they feel intuitive and alive.</p>
+      </div>
+
+      <div class="philosophy-card" id="phil-adaptive">
+        <div class="philosophy-icon">✦</div>
+        <h3>Adaptive Intelligence</h3>
+        <p>Building systems that learn and evolve. Integrating modern architectures to create smarter, more responsive applications.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <span>© 2026 Daffa Aufa</span>
+    <span id="footerStar">✦</span>
+    <span>Engineered with Astro + Svelte</span>
+  </footer>
+
+  <script src="/src/scripts/main.js"></script>
+</body>
+</html>
