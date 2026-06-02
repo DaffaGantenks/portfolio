@@ -28,16 +28,23 @@ function initAll() {
 function initTheme() {
   const toggle = document.getElementById('theme-toggle');
   const root   = document.documentElement;
+  const body   = document.body;
   const stored = localStorage.getItem('portfolio-theme') || 'dark';
 
   root.setAttribute('data-theme', stored);
+  if (body) {
+    body.setAttribute('data-theme', stored);
+  }
 
   if (!toggle) return;
 
   toggle.addEventListener('click', () => {
-    const current = root.getAttribute('data-theme');
+    const current = root.getAttribute('data-theme') || 'dark';
     const next    = current === 'dark' ? 'light' : 'dark';
     root.setAttribute('data-theme', next);
+    if (body) {
+      body.setAttribute('data-theme', next);
+    }
     localStorage.setItem('portfolio-theme', next);
   });
 }
